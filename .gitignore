@@ -41,6 +41,4 @@ rsconnect/
 
 # Other folders
 assets/
-data/'Ume'$'\303\245'' Software Carpentry - Pre-workshop Survey.csv'
-data/'Ume'$'\303\245'' Software Carpentry - Pre-workshop Survey.csv.zip'
-data/'Ume'$'\303\245'' Software Carpentry-Pre-workshop-Survey-07-10-2018.csv'
+data/uswc-pre-worlshop-survey-07-10-2018.csv
