@@ -34,7 +34,18 @@ knitr::include_graphics('img/imposter.jpg')
 
 ## Rstudio set-up
 
-## Atomic data types
+## Atomic vectors {.flexbox .vcenter .centered}
+
+```{r, out.height='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/r-vectors-07-10-2018.png')
+```
+
+## All vectors {.flexbox .vcenter .centered}
+
+```{r, out.height='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/r-all-vectors-07-10-2018.png')
+```
+
 
 ## {.flexbox .vcenter .centered}
 
@@ -73,10 +84,6 @@ knitr::include_graphics('img/dplyr_mutate.png')
 ```{r, out.width='100%', fig.align='center', fig.cap=''}
 knitr::include_graphics('img/dplyr_summarise.png')
 ```
-
-## Functions
-
-- 
 
 ## Functions
 
