@@ -1,0 +1,130 @@
+---
+title: "Umeå Software Carpentry"
+author: "Alistair Bailey"
+date: "9-10th October 2018"
+output: 
+  ioslides_presentation:
+    css: assets/custom.css
+    template: assets/custom.html
+    logo: assets/UoS_Logo.svg
+    widescreen: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##
+<div class="columns-2">
+- Alistair Bailey
+- website: ab604.uk
+- email: ab604@soton.ac.uk
+- twitter: @alistair604
+
+```{r, out.width='100%', fig.align='left', fig.cap=''}
+knitr::include_graphics('img/uk-southampton-map-07-10-2018.png')
+```
+</div>
+
+## Imposter syndrome {.flexbox .vcenter .centered}
+
+```{r, out.height='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/imposter.jpg')
+```
+
+## Rstudio set-up
+
+## Atomic data types
+
+## {.flexbox .vcenter .centered}
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/data_frame.png')
+```
+
+## Tidy data
+
+1. Each variable forms a <span style="color:red">column</span> 
+2. Each observation forms a <span style="color:red">row</span>
+3. Each observational unit forms a table
+
+## dplyr::filter()
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dplyr_filter.png')
+```
+
+## dplyr::select()
+
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dplyr_select.png')
+```
+
+## dplyr::mutate()
+
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dplyr_mutate.png')
+```
+
+## dplyr::summarise
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dplyr_summarise.png')
+```
+
+## Functions
+
+- 
+
+## Functions
+
+Name,body and set of arguments
+
+```{r eval=FALSE, echo=TRUE}
+# Roll two dice function
+roll <- function(){
+  die <- 1:6
+  dice <- sample(die, size = 2, replace = TRUE)
+  sum(dice)
+}
+```
+
+```{r, out.width='25%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dice.jpg')
+```
+
+## Functions
+
+```{r, out.width='50%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/dnd_dice.JPG')
+```
+
+##
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/r-dice-function-07-10-2018.png')
+```
+
+## GDP calculator
+
+```{r eval=FALSE, echo=TRUE}
+# Takes a dataset and multiplies the population column
+# with the GDP per capita column.
+calcGDP <- function(dat, yr=NULL, ctry=NULL) {
+  # Is there a year argument?
+  if(!is.null(yr)) {
+   dat <- dat %>% filter(year == yr)
+  }
+  # Is there a country argument?
+  if (!is.null(ctry)) {
+   dat <- dat %>% filter(country == ctry)
+  }
+  # Create new GDP column
+  new <- dat %>% mutate(gdp = pop * gdpPercap)
+  return(new)
+}
+```
+
+## Further resources
