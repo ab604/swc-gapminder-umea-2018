@@ -13,21 +13,21 @@ library(tidyverse)
 ## Gapminder
 
 ```{r load-data}
-dat <- read.csv("../data/gapminder_data.csv")
-country_colours <- read_tsv("../data/country-colors.tsv")
-continent_colours <- read_tsv("../data/continent-colors.tsv")
+dat <- read_csv("../data/gapminder_data.csv")
+# country_colours <- read_tsv("../data/country-colors.tsv")
+# continent_colours <- read_tsv("../data/continent-colors.tsv")
 glimpse(dat)
 
-dat_join <- dat %>% left_join(country_colours)
+# dat_join <- dat %>% left_join(country_colours)
 ```
 
 ## Motivating example - life expectancy around the world
 
 ```{r}
-dat_join %>% filter(year == 2007 & continent %in% c("Europe","Africa")) %>% 
+dat %>% filter(year == 2007 & continent %in% c("Europe","Africa")) %>% 
   ggplot(aes(x = gdpPercap,y = lifeExp, colour = continent, size = lifeExp)) +
   geom_point() +
-  scale_color_manual(values = continent_colours$color) +
+  #scale_color_manual(values = continent_colours$color) +
   scale_x_log10() +
   theme(legend.position = "none")
 ```

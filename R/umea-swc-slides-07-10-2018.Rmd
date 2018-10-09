@@ -13,6 +13,10 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+##
+
+Etherpad: https://pad.carpentries.org/2018-10-09-umea 
+Gapminder: https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv 
 
 ##
 <div class="columns-2">
@@ -26,10 +30,16 @@ knitr::include_graphics('img/uk-southampton-map-07-10-2018.png')
 ```
 </div>
 
-## Imposter syndrome {.flexbox .vcenter .centered}
+## Me most of the time {.flexbox .vcenter .centered}
 
 ```{r, out.height='100%', fig.align='center', fig.cap=''}
 knitr::include_graphics('img/imposter.jpg')
+```
+
+##
+
+```{r, out.height='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/practioner-programmer.png')
 ```
 
 ## Rstudio set-up
@@ -135,3 +145,18 @@ calcGDP <- function(dat, yr=NULL, ctry=NULL) {
 ```
 
 ## Further resources
+
+R4DS 
+Happy Git and Github
+Spreadsheets
+
+## R people to follow
+
+Hadley Wickham @hadleywickham
+Garrett Grolemund @StatGarrett
+Jenny Bryan @JennyBryan
+Mara Averick @datandme
+Thomas Lin Pedersen @thomasp85
+Julia Silge @juliasilge
+David Robinson @drob
+Malle Salmon @ma_salmon
