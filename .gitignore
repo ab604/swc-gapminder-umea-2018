@@ -41,4 +41,5 @@ rsconnect/
 
 # Other folders
 data/uswc-pre-worlshop-survey-07-10-2018.csv
-/R/umea-swc-invoice-12-10-2018.*
+R/umea-swc-invoice-12-10-2018.Rmd
+R/umea-swc-invoice-12-10-2018.pdf
