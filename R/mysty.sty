@@ -1,0 +1,20 @@
+%\usepackage{palatino}
+\renewcommand{\familydefault}{\sfdefault} % sans serif
+\fontfamily{ppl}\selectfont
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+  \hypersetup{colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=black}
+
+\usepackage{prettyref}
+\newrefformat{tab}{table\,\ref{#1}}
+\newrefformat{fig}{fig.\,\ref{#1}}
+\newrefformat{eq}{eqn.\,\textup{(\ref{#1})}}
+\newrefformat{sub}{section\,\ref{#1}}
+
+\usepackage{array,booktabs}
+\usepackage{mathpazo}
+\usepackage{chemarr}
+\usepackage[bf,small]{caption}
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}

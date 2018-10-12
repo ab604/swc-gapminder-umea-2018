@@ -1,0 +1,82 @@
+---
+title: "Umeå Software Carpentry Workshop Invoice"
+author: "Alistair Bailey"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document:
+    includes:
+      in_header: mysty.sty
+      fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache=FALSE,echo=FALSE, message=FALSE, 
+                      warning=FALSE, fig=TRUE,eval=TRUE)
+#library(pander)
+library(tidyverse)
+
+# Exchange rate 12th October 2018
+nok_gbp <- 10.82
+nok_sk <- 0.91
+gbp_nok <- 0.093
+```
+
+## Invoice for Software Carpentry Instruction Umeå 9-10th October 2018
+
+The workshop was hosted by High Performance Computing Center North (HPC2N) at
+Umeå University SE-901 87, Umeå, Sweden in affiliation with the Nordic eInfrastructure Collaboration. 
+
+### Exchange rate
+
+Exchange rates on the 12th October 2018: 
+
+- 1 GBP = 10.82 NOK
+- 1 SEK = 0.91 NOK
+- 1 NOK = 0.093 GBP
+
+### Table of expsenses
+
+Please see attached receipts
+ 
+```{r expenses}
+parking <- 63.30 * nok_gbp
+hotel_uk <- 42 * nok_gbp
+flights <- 320.5 * nok_gbp
+hotel_um <- 301.45 * nok_gbp
+bus <- 100 * nok_sk
+
+tot_exp <- sum(parking,hotel_uk,hotel_um,flights,bus)
+
+total_gbp <- tot_exp * gbp_nok
+
+exp_table <- tibble(Expense = c("Heathrow Airport Parking", 
+                                "Heathrow Airport Hotel",
+                                "Flights",
+                                "Umea Airport Bus",
+                                "Umea Hotel"),
+                    'Cost GBP/SEK' = c(63.30,
+                                       42,
+                                       320.5,
+                                       100,
+                                       301.45),
+                    'Cost NOK' = c(parking,
+                                   hotel_uk,
+                                   flights,
+                                   bus,
+                                   hotel_um))
+pander::pander(exp_table,justify = c('left', 'center', 'center'))
+```
+
+Total costs **`r format(sum(exp_table[,3]))` NOK**
+
+Total costs `r format(sum(exp_table[,3])*gbp_nok)` GBP
+
+### Payment information
+
+Please make payment to:
+
+- Account name: Mr A Bailey
+- Account holder address: Flat 17, 115 Regents Park Road, Southampton, SO15 8AH, United Kingdom
+- Bank Identifier Code (BIC):
+- SWIFT Intermediary Bank address:
+- International Bank Account Number (IBAN): 
