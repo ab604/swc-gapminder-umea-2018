@@ -16,7 +16,16 @@ knitr::opts_chunk$set(echo = FALSE)
 ##
 
 Etherpad: https://pad.carpentries.org/2018-10-09-umea 
+
 Gapminder: https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv 
+
+## The Carpentries
+
+"...teaching researchers the computing skills they need to get more done in less time and with less pain. "
+
+## Code of conduct
+
+"We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our events and communications are expected to show respect and courtesy to others."
 
 ##
 <div class="columns-2">
@@ -38,24 +47,57 @@ knitr::include_graphics('img/imposter.jpg')
 
 ##
 
-```{r, out.height='100%', fig.align='center', fig.cap=''}
+```{r, out.width='100%', fig.align='center', fig.cap=''}
 knitr::include_graphics('img/practioner-programmer.png')
 ```
 
-## Rstudio set-up
+## 
 
-## Atomic vectors {.flexbox .vcenter .centered}
+Ross Ihaka and Robert Gentleman. 
+
+R: A language for data analysis and graphics. Journal of Computational and Graphical Statistics, 5(3):299–314, 1996
+
+##
+
+“There are only two kinds of languages: the ones people complain about and the ones nobody uses”
+
+Bjarne Stroustrup, C++ creator and developer
+
+## @kierisi
+
+[Jesse Mositpak](https://www.jessemaegan.com/post/r4ds-the-next-iteration/)
 
 ```{r, out.height='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/jesse_m.png')
+```
+
+[Jesse Mositpak](https://www.jessemaegan.com/post/r4ds-the-next-iteration/)
+
+## Rstudio set-up
+
+## Assigning objects {.flexbox .vcenter .centered}
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/bibi-data.png')
+```
+
+## {.flexbox .centered}
+
+```{r, out.height='70%', fig.align='center', fig.cap=''}
 knitr::include_graphics('img/r-vectors-07-10-2018.png')
 ```
 
-## All vectors {.flexbox .vcenter .centered}
+## {.flexbox .centered}
 
-```{r, out.height='100%', fig.align='center', fig.cap=''}
+```{r, out.height='60%', fig.align='center', fig.cap=''}
 knitr::include_graphics('img/r-all-vectors-07-10-2018.png')
 ```
 
+## {.flexbox .vcenter .centered}
+
+```{r, out.width='100%', fig.align='center', fig.cap=''}
+knitr::include_graphics('img/indexing.png')
+```
 
 ## {.flexbox .vcenter .centered}
 
@@ -146,17 +188,19 @@ calcGDP <- function(dat, yr=NULL, ctry=NULL) {
 
 ## Further resources
 
-R4DS 
-Happy Git and Github
-Spreadsheets
+- [R4DS](http://r4ds.had.co.nz/)
+- [Happy Git and R](http://happygitwithr.com/)
+- [Working with Spreadsheets](https://peerj.com/preprints/3183/)
+- [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)
 
 ## R people to follow
 
-Hadley Wickham @hadleywickham
-Garrett Grolemund @StatGarrett
-Jenny Bryan @JennyBryan
-Mara Averick @datandme
-Thomas Lin Pedersen @thomasp85
-Julia Silge @juliasilge
-David Robinson @drob
-Malle Salmon @ma_salmon
+- Hadley Wickham @hadleywickham
+- Garrett Grolemund @StatGarrett
+- Jenny Bryan @JennyBryan
+- Mara Averick @datandme
+- Thomas Lin Pedersen @thomasp85
+- Julia Silge @juliasilge
+- David Robinson @drob
+- Maëlle Salmon @ma_salmon
+- Jesse Mostipak @kierisi

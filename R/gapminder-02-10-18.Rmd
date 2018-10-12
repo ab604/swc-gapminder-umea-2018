@@ -21,14 +21,102 @@ glimpse(dat)
 # dat_join <- dat %>% left_join(country_colours)
 ```
 
+
+
+## Europe
+
+```{r europe-dplyr}
+
+dat %>% filter(continent == "Europe")
+
+dat %>% select(year) %>% distinct()
+
+dat %>% filter(year == 1952) %>% 
+  select(country,pop) %>% 
+  arrange(pop)
+
+dat %>% filter(year == 1952) %>% 
+  select(country,pop) %>% 
+  arrange(desc(pop))
+
+dat %>% filter(country == "Sweden" & year == 1952 |
+                 country == "Sweden" & year == 2007) 
+
+dat %>% filter(country == "Sweden") %>% 
+  select(year,pop,gdpPercap) %>% 
+mutate(gdp = pop * gdpPercap)
+
+dat %>% filter(year == 2007) %>% 
+  group_by(continent) %>% 
+  summarise(avg_lifeExp = mean(lifeExp))
+
+dat %>% filter(year == 2007) %>% 
+  group_by(continent) %>% 
+  mutate(gdp = pop * gdpPercap) %>% 
+  summarise(med_gdp = median(gdp))
+```
+
+```{r gapminder-function}
+# Takes a dataset and multiplies the population column
+# with the GDP per capita column.
+calcGDP <- function(dat, yr=NULL, ctry=NULL) {
+  # Is there a year argument?
+  if(!is.null(yr)) {
+   dat <- dat %>% filter(year == yr)
+  }
+  # Is there a country argument?
+  if (!is.null(ctry)) {
+   dat <- dat %>% filter(country == ctry)
+  }
+  # Create new GDP column
+  new <- dat %>% mutate(gdp = pop * gdpPercap)
+  return(new)
+}
+```
+
+```{r plots}
+dat %>%
+  filter(continent == "Europe" & year == 1997) %>% 
+  ggplot(aes(x = country,y = pop)) +
+  geom_bar(stat = "identity")
+
+
+dat %>%
+  filter(continent == "Europe" & year == 1997) %>% 
+  ggplot(aes(x = fct_reorder(country, pop),y = pop, 
+             fill = lifeExp)) +
+  geom_bar(stat = "identity") +
+  coord_flip()
+
+
+dat %>%
+  filter(continent != "Oceania") %>% 
+  ggplot(aes(x = year,y = lifeExp, colour = country)) +
+  geom_line() +
+  facet_wrap(~ continent) +
+  theme(legend.position = "none")
+
+dat %>% ggplot(aes(continent,lifeExp)) +
+  geom_boxplot() 
+
+dat %>% ggplot(aes(continent,lifeExp)) +
+  geom_boxplot(outlier.colour = "hotpink") +
+  geom_jitter(position = position_jitter(width = 0.1,height = 0), alpha = 0.25)
+
+```
+
 ## Motivating example - life expectancy around the world
 
 ```{r}
 dat %>% filter(year == 2007 & continent %in% c("Europe","Africa")) %>% 
   ggplot(aes(x = gdpPercap,y = lifeExp, colour = continent, size = lifeExp)) +
   geom_point() +
-  #scale_color_manual(values = continent_colours$color) +
+  scale_x_log10() +
+  theme(legend.position = "none")
+
+dat %>% filter(year == 2007) %>% 
+  ggplot(aes(x = gdpPercap,y = lifeExp, colour = continent, size = lifeExp)) +
+  geom_point() +
   scale_x_log10() +
   theme(legend.position = "none")
 ```
-
