@@ -77,6 +77,6 @@ Please make payment to:
 
 - Account name: Mr A Bailey
 - Account holder address: Flat 17, 115 Regents Park Road, Southampton, SO15 8AH, United Kingdom
-- Bank Identifier Code (BIC):
-- SWIFT Intermediary Bank address:
-- International Bank Account Number (IBAN): 
+- Bank Identifier Code (BIC): NAIAGB21
+- SWIFT Intermediary Bank address: MIDLGB22
+- International Bank Account Number (IBAN): GB12 NAIA 0702 4646 2570 33
